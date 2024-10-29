@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Simple App</string>
+    <string name="btn_save"> Process </string>
+</resources>
