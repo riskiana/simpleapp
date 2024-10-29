@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         LocalDate dobValue = LocalDate.parse(dateOfBirth.getText().toString());
         Integer age = Period.between(dobValue, LocalDate.now()).getYears();
         Log.d("full name", fullNameValue);
+        if(age < 16){
+            Toast.makeText(this, "age must higher than 16", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         txtResult.setText("your age:"+ age);
 
